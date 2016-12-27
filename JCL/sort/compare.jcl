@@ -1,3 +1,6 @@
+//* JCL to compare two files and create match and unmatch files *//
+//* Modified: 26-12-2016 By : Phani                             *//
+//*                                                             *// 
 //STEP0001 EXEC PGM=SORT                                         
 //SYSOUT   DD SYSOUT=*                                           
 //IN1      DD DISP=SHR,DSN=<INPUT1 File1>                         

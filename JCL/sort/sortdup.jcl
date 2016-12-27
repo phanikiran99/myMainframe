@@ -1,4 +1,6 @@
-//*JCL to Sort and eliminate/include only duplicates using ICETOOL
+//* JCL to Sort and eliminate/include only duplicates  ICETOOL  *//
+//* Modified: 26-12-2016 By : Phani                             *//
+//*                                                             *// 
 //STEP010 EXEC PGM=ICETOOL                       
 //TOOLMSG DD SYSOUT=*                            
 //DFSMSG DD  SYSOUT=*                            

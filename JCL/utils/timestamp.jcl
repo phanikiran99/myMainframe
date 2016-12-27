@@ -1,6 +1,6 @@
-//*********************************************************************
-//* DESCRIPTION     : CREATES MODULE TIMESTAMP LIST FROM AMBLIST OUTPUT
-//* MAINTENANCE LOG :                                                  
+//*  CREATES MODULE TIMESTAMP LIST FROM AMBLIST OUTPUT          *//
+//* Modified: 26-12-2016 By : Phani                             *//
+//*                                                             *//                                               
 //*-------------------------------------------------------------------*
 //*  RUN AMBLIST                                                       
 //*-------------------------------------------------------------------*

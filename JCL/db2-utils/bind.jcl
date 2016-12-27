@@ -1,3 +1,6 @@
+//* JCL TO BE USED FOR BIND(EXAMPLE ONLY)                       *//
+//* Modified: 26-12-2016 By : Phani                             *//
+//*                                                             *//  
 //STEP010  EXEC PGM=IKJEFT1B,                         
 //         DYNAMNBR=2,                                
 //         REGION=0K                       
@@ -18,7 +21,7 @@ DSN SYSTEM(<db2 subsystem>)
     ACTION(REPLACE/ADD) -           
     VALIDATE(BIND) -            
     DEGREE(1)-                  
-    ISOLATION(CS) -       * Other Isolation are RR,UR           
-    EXPLAIN(NO) -         * Change to yes for capturing details in plan_table      
+    ISOLATION(CS) -       <- * Other Isolation are RR,UR           
+    EXPLAIN(NO) -         <- * Change to yes for capturing details in plan_table      
     ENABLE(BATCH,CICS,DLIBATCH);  
 //                                                    

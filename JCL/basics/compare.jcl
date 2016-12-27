@@ -1,6 +1,6 @@
-//**********************************************************************
-//*                COMPARE TWO PDS AND DISPLAY IN SPOOL                 
-//**********************************************************************
+//* COMPARE TWO PDS AND DISPLAY DIFFERENCES IN SPOOL            *//
+//* Modified: 26-12-2016 By : Phani                             *//
+//*                                                             *// 
 //SUPERC EXEC PGM=ISRSUPC,                                              
 //       PARM=(DELTAL,LINECMP,'','')                                    
 //OLDDD  DD DSN=<old lib name>,DISP=SHR                                

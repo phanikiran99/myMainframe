@@ -1,3 +1,6 @@
+//* COMPRESS MULTIPLE FILES TO ONE FILE (ZIP)                   *//
+//* Modified: 26-12-2016 By : Phani                             *//
+//*                                                             *// 
 //GETUDATA EXEC PGM=ADRDSSU,REGION=4M              
 //*                                                
 //SYSPRINT DD SYSOUT=*                             

@@ -1,0 +1,94 @@
+ STRINGP:PROC OPTIONS(MAIN);                                            
+ /* DECLARATIONS */                                                     
+  DCL NAME01 CHAR(10) VARYING INIT('PHANI');                            
+  DCL NAME02 CHAR(10) VARYING INIT('PHANI');                            
+  DCL NUM01 FIXED DEC(2,0) INIT(10);                                    
+  DCL BIT2(2) BIT(2) INIT((2)'01'B) ;                                   
+ /* FUNCTION BIT */                                                     
+ PUT SKIP LIST('BIT :',BIT(NUM01));                                     
+                           /* CONVERTS DATA TO BIT (ONLY NUM) */        
+ /* FUNCTION BOOL */                                                    
+ PUT SKIP LIST('BOOL',BOOL(BIT2(1),BIT2(2),'1000'B)); /* RETURN '10'B */
+                           /* PERFORMS BOOLIAN OP IN TWO BIT STRINGS*/  
+ /* CENTERLEFT */                                                       
+ PUT SKIP LIST('CENTERLEFT',CENTERLEFT(NAME01,40,'+'));                 
+                          /* RETURNS STRING WITH VALUE CENTERED LFT */  
+                        /* +++++++++++++++++PHANI++++++++++++++++++ */  
+ /* CHARACTER */                                                        
+ NAME02 = CHAR(NUM01);                                                  
+ PUT SKIP LIST('CHARACTER',CHARACTER(NUM01),STG(NUM01),           
+                STG(NAME02));                                     
+                       /* CONVERTS DATA TO CHARECTER */           
+ /* COPY */                                                       
+ PUT SKIP LIST('COPY',COPY(NAME01,2));                            
+                      /* COPIES STRING TO SPECIFIED TIMES */      
+ /* HIGH */                                                       
+ PUT SKIP LIST('HIGH',HIGH(3));                                   
+                     /* RETURNS HEX HIGH VALUES OF SPEC LEN */    
+ /* INDEX */                                                      
+ PUT SKIP LIST('INDEX PH',INDEX(NAME01,'PH'));                    
+ PUT SKIP LIST('INDEX 01',INDEX(NAME01,'01'));                    
+                     /* RETURNS THE POS OF STRING IN MAIN STR */  
+                     /* IF NOT FOUND OR NULL STRING RETURNS 0 */  
+ /* LEFT */                                                       
+ PUT SKIP LIST('LEFT :',LEFT(NAME01,20));                         
+                    /* ALLIGNS THE STRING TO LEFT OF SPEC CHARS */
+ /* LENGTH */                                                     
+ PUT SKIP LIST('LENGTH:',LENGTH(NAME01));                   
+                    /* RETURNS LENGTH OF STRING */          
+ /* LOW */                                                  
+ PUT SKIP LIST('LOW:',LOW(2));                              
+                   /* RETURNS LOW CHARECTERS LEN */         
+ /* LOWERCASE */                                            
+ PUT SKIP LIST('LOWERCASE',LOWERCASE(NAME01));              
+                   /* RETURNS LOWERCASE OF SPEC STRING */   
+ /* MAXLENGTH */                                            
+ PUT SKIP LIST('MAXLENGTH',MAXLENGTH(NAME01));              
+                   /* RETURNS MAXLENGHT OF A STRING */      
+ /* REPEAT */                                               
+ PUT SKIP LIST('REPEAT',REPEAT(NAME01,02));                 
+                  /* REPEATS STRING N TIMES */              
+ /* REVERSE */                                              
+ PUT SKIP LIST('REVERSE',REVERSE(NAME01));                  
+                  /* RETURNS THE REVERS OF A STRING */      
+ /* SEARCH  */                                              
+ NAME01 = 'PHANIKIRAN'                                                  
+ PUT SKIP LIST('SEARCH',SEARCH(NAME01,'A'));                            
+ PUT SKIP LIST('SEARCH POS',SEARCH(NAME01,'A',5));                      
+ PUT SKIP LIST('SEARCHR',SEARCHR(NAME01,'A'));                          
+                 /* RETURNS POSITION OF SEARCH STRING */                
+ /* SUBSTR */                                                           
+ PUT SKIP LIST('SUBSTR',SUBSTR(NAME01,2,3));                            
+ PUT SKIP LIST('SUBSTR',SUBSTR(NAME01,2));                              
+                /* RETURNS SUBSTRING FROM A STRING */                   
+ /* TALLY */                                                            
+ PUT SKIP LIST('TALLY',"'A' APPEARS :" ||TRIM(TALLY(NAME01,'A')));      
+ PUT SKIP LIST('TALLY',"'AN' APPEARS :" ||TRIM(TALLY(NAME01,'AN')));    
+               /* RETURNS THE #OF OCCURANCES OF STRING IN A STRING */   
+ /* TRANSLATE */                                                        
+ NAME01 = 'ABCD'                                                        
+ NAME02 = '3456'                                                        
+ PUT SKIP LIST('TRANSLATE',TRANSLATE('STB3DCABYZQ',NAME02,NAME01));     
+              /* TRANSLATES INPUT STRING WITH REPLACING CHARECTERS FROM 
+              NAME02 FOR ALL CHARECTERS THAT APPEAR IN NAME01 */      
+ /* TRIM */                                                           
+ NAME01 = ' PHANIKIRAN '  /* PADDED SPACES */                         
+ PUT SKIP LIST('TRIM',TRIM(NAME01));                                  
+             /* TRIMS THE LEFT AND RIGHT MOST SPACES */               
+ /* UPPERCASE */                                                      
+ NAME01 = LOWERCASE(TRIM(NAME01));                                    
+ PUT SKIP LIST('UPPERCASE',UPPERCASE(NAME01));                        
+                     /* RETURNS THE UPPERCASE OF A STRING */          
+ /* VERIFY */                                                         
+ PUT SKIP LIST('VERIFY',VERIFY('2A56B','0123456789'));                
+ PUT SKIP LIST('VERIFYR',VERIFY('2A56B','0123456789'));               
+ PUT SKIP LIST('VERIFY',VERIFY('2256B','0123456789AB'));              
+                 /* RETURNS 0 IF ALL IN S FOUND IN C */               
+                 /* ELSE RETURNS FIRST NON OCC POSITION */            
+ /* WHIGH WLOW */                                                     
+ PUT SKIP LIST('WHIGH,WLOW',WHIGH(2),WLOW(2));                        
+                /*  RETURNS WIDECHAR HIGH AND LOW VALUES */           
+ /* WIDECHAR  */                                         
+ PUT SKIP LIST('WIDECHAR',WIDECHAR(NAME01));             
+               /* CONVERTS STRING TO WIDECHAR STRING*/   
+ END STRINGP;                                                                            

@@ -1,0 +1,81 @@
+ DATATYP:PROC OPTIONS(MAIN);   
+ /* PL/1 PROGRAM TO DEFINE ALL KNOWN DATATYPES */                                    
+ /* DECLARE ALL PL/1 DATA TYPES */                                 
+ /*        NUMERIC DATA         */                                 
+ DCL NUM_FB   FIXED BINARY INIT(122.22);        /* 122          */ 
+ DCL NUM_FLB  FLOAT BINARY INIT(122.22);        /* 1.222200E+02 */ 
+ DCL NUM_FB_V FIXED BINARY(10,2) INIT(122.22);  /*  122.0       */ 
+ DCL NUM_FD   FIXED DECIMAL INIT(122.22);       /*    122       */ 
+ DCL NUM_FLD  FLOAT DECIMAL INIT(122.22);       /* 1.22220E+02  */ 
+ DCL NUM_FD_V FIXED DECIMAL(10,2) INIT(122.22); /*      122.22  */ 
+ /*        NUMERIC DATA(WITH PIC CLASS) */                         
+ DCL NUM_P9    PIC '99' INIT(23.4);   /* 23 */                     
+ DCL NUM_P9_9  PIC '99.9' INIT(23.4);     /*02.3*/                 
+ DCL NUM_P9V9  PIC '99V9' INIT(23.4); /* 233 */                    
+ DCL NUM_P9V_9 PIC '99V.9' INIT(23.4); /* 23.3 */                  
+ DCL NUM_PZV_9 PIC 'Z9V.9' INIT(23.4); /* 23.3 */                  
+ DCL NUM_$ZV_9 PIC '$Z9V.9' INIT(23.4); /* $23.3*/                 
+ /* CHARECTER DATA */                                              
+ DCL CHAR_01 CHAR(10) INIT('ABC');                                 
+ DCL CHAR_02 CHAR(10) VARYING INIT('ABCD');                         
+ DCL CHAR_TB(4) CHAR(2) VARYING INIT((4)'CD');
+ /* BIT data */
+ DCL BIT8 BIT(8) , CHAR1 CHAR(1);
+ DCL(ST1,ST2) BIT(10);
+ DCL A BIT(3), B BIT(5), C BIT(8);
+ CHAR1 = 'A'                     
+ /* BIT8 = CHAR1; This gives error */ 
+                                          
+ /* OTHER DECLARES */                                               
+ DCL STG BUILTIN; /* STORAGE BUILTIN */                             
+ PUT SKIP LIST('NUMERIC DATA TYPES PL/1 (122.22),STORAGE')          
+ PUT SKIP LIST('--------------------------------');                 
+ PUT SKIP LIST('NUM_FB  :',NUM_FB  ,STG(NUM_FB  ));                 
+ PUT SKIP LIST('NUM_FLB :',NUM_FLB ,STG(NUM_FLB ));                 
+ PUT SKIP LIST('NUM_FB_V:',NUM_FB_V,STG(NUM_FB_V));                 
+ PUT SKIP LIST('NUM_FD  :',NUM_FD  ,STG(NUM_FD  ));                 
+ PUT SKIP LIST('NUM_FLD :',NUM_FLD ,STG(NUM_FLD ));                 
+ PUT SKIP LIST('NUM_FD_V:',NUM_FD_V,STG(NUM_FD_V));                 
+ /* PIC CLASS VARIABLES */                                          
+ PUT SKIP LIST('PIC CLASS REPRESENTATION  ');                       
+ PUT SKIP LIST('--------------------------------')                  
+ PUT SKIP LIST('NUM_P9   ',NUM_P9   ,STG(NUM_P9   )); /* 23,2 */    
+ PUT SKIP LIST('NUM_P9_9 ',NUM_P9_9 ,STG(NUM_P9_9 )); /*02.3,4*/    
+ PUT SKIP LIST('NUM_P9V9 ',NUM_P9V9 ,STG(NUM_P9V9 )); /* 233,3 */   
+ PUT SKIP LIST('NUM_P9V_9',NUM_P9V_9,STG(NUM_P9V_9)); /* 23.3,4 */    
+ PUT SKIP LIST('NUM_PZV_9',NUM_PZV_9,STG(NUM_PZV_9)); /* 23.3,4 */    
+ PUT SKIP LIST('NUM_$ZV_9',NUM_$ZV_9,STG(NUM_$ZV_9)); /* $23.3,5*/    
+ /* ARTHEMETIC OPERATIONS  */                                         
+ PUT SKIP LIST('ARTHEMETIC ON NUMERIC DATA');                         
+ PUT SKIP LIST('--------------------------------')                    
+ PUT SKIP LIST('NUM_FB + NUM_FLB',NUM_FB + NUM_FLB); /*2.442200E+02*/ 
+ PUT SKIP LIST('NUM_P9V9+ NUM_P9', NUM_P9V9+ NUM_P9); /* 23.4 + 23 */ 
+ /* CHARECTER DATA         */                                         
+ PUT SKIP LIST('CHARECTER DATA EXPLORATION');                         
+ PUT SKIP LIST('--------------------------------');                   
+ PUT SKIP LIST('CHAR_01 :',CHAR_01,STG(CHAR_01));                     
+ PUT SKIP LIST('CHAR_02 :',CHAR_02,STG(CHAR_02));                     
+ CHAR_TB(2) = 'XY'; /* MODIFY 2ND ELEM OF TABLE */                    
+ PUT SKIP LIST('CHAR_TB(2):',CHAR_TB(2),STG(CHAR_TB(2)));             
+ CHAR_01 = STRING(CHAR_TB);                                           
+ PUT SKIP LIST('STRING(CHAR_TB) :',STRING(CHAR_TB),                   
+                STG(CHAR_01));                                        
+ PUT SKIP LIST('--------------------------------');
+ PUT SKIP LIST('BIT OPERATIONS');
+ ST1 = '110011'B;   /* 51 */
+ ST2='1100110000'B; /* 816*/  
+ SELECT;                        
+  WHEN(ST1<ST2) PUT LIST('A');  /* A WILL BE DISPLAYED */
+  WHEN(ST1=ST2) PUT LIST('B'); 
+  WHEN(ST1>ST2) PUT LIST('C'); 
+ END;  /* END SELECT */                            
+ A= '011'B;           
+ B='10101'B;          
+ C= BOOL(A,B,'1000'B); /* PERFORMS BOOLIAN OP ON TWO BIT STRINGS */
+ /* OPERATION IS AS BELOW */
+ /* A = '01100'B  /* BITS OF A ARE SHORTER SO EXTENDED TO RIGHT */
+ /* B = '10101'B  */
+ /* C = '0010000'B     /* 00 - 1ST , 01 - 2ND, 10 -3RD, 11 - 4TH */
+ /* TWO EXTRA BITS '00'B WILL BE PADDED TO RIGHT BASED ON LEN OF C */
+ PUT SKIP LIST(C);    /* '00010000'B */
+ END DATATYP;                                          
