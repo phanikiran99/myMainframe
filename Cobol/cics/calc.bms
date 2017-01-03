@@ -1,0 +1,40 @@
+MAPAB54 DFHMSD TYPE=&SYSPARM,MODE=INOUT,TERM=ALL,                      X00010001
+               LANG=COBOL,TIOAPFX=YES,CTRL=(FREEKB),                   X00020001
+               DSATTS=COLOR,MAPATTS=COLOR                               00030001
+MAPCAL DFHMDI SIZE=(24,80),LINE=1,COLUMN=1                              00040001
+       DFHMDF POS=(1,25),LENGTH=16,ATTRB=PROT,                         X00050001
+               INITIAL='CICS CALCULATOR '                               00060001
+       DFHMDF POS=(3,10),LENGTH=20,ATTRB=PROT,COLOR=WHITE,             X00070001
+               INITIAL='NUMBER ONE          '                           00080001
+NUMONE DFHMDF POS=(3,35),LENGTH=05,                                    X00081001
+               INITIAL='_____',ATTRB=(UNPROT,IC),COLOR=WHITE            00082001
+       DFHMDF POS=(5,10),LENGTH=20,ATTRB=PROT,COLOR=WHITE,             X00083001
+               INITIAL='NUMBER TWO          '                           00084001
+NUMTWO DFHMDF POS=(5,35),LENGTH=05,                                    X00085001
+               INITIAL='_____',ATTRB=(UNPROT,IC),COLOR=WHITE            00086001
+       DFHMDF POS=(8,10),LENGTH=05,ATTRB=PROT,COLOR=WHITE,             X00087001
+               INITIAL='ADD :'                                          00088001
+ADDRES DFHMDF POS=(8,17),LENGTH=06,                                    X00089001
+               INITIAL='______',ATTRB=(UNPROT,IC),COLOR=WHITE           00090001
+       DFHMDF POS=(8,30),LENGTH=05,ATTRB=PROT,COLOR=WHITE,             X00100001
+               INITIAL='SUB :'                                          00110001
+SUBRES DFHMDF POS=(8,36),LENGTH=06,                                    X00120001
+               INITIAL='______',ATTRB=(UNPROT,IC),COLOR=WHITE           00130001
+       DFHMDF POS=(10,10),LENGTH=05,ATTRB=PROT,COLOR=WHITE,            X00140001
+               INITIAL='MUL :'                                          00150001
+MULRES DFHMDF POS=(10,17),LENGTH=10,                                   X00160001
+               INITIAL='__________',ATTRB=(UNPROT,IC),COLOR=WHITE       00170001
+       DFHMDF POS=(10,30),LENGTH=05,ATTRB=PROT,COLOR=WHITE,            X00180001
+               INITIAL='DIV :'                                          00190001
+DIVRES DFHMDF POS=(10,36),LENGTH=05,                                   X00200001
+               INITIAL='_____',ATTRB=(UNPROT,IC),COLOR=WHITE            00210001
+       DFHMDF POS=(20,10),LENGTH=8,INITIAL='MESSAGE:',                 X00230001
+               ATTRB=ASKIP,COLOR=NEUTRAL                                00240001
+MSGI   DFHMDF POS=(20,20),LENGTH=30,ATTRB=(PROT,NUM),                  X00250001
+               COLOR=RED,INITIAL='_____________________'                00260001
+LEV1   DFHMDF POS=(24,1),LENGTH=8,ATTRB=PROT,INITIAL='F3=EXIT'          00270001
+       DFHMDF POS=(24,55),LENGTH=18,ATTRB=PROT,                        X00280001
+               INITIAL='ENTER= PROCEED'                                 00290001
+       DFHMSD TYPE=FINAL                                                00300001
+       END                                                              00310001
+
