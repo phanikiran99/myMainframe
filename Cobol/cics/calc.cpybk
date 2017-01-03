@@ -1,0 +1,77 @@
+       01  MAPCALI.
+           02  FILLER PIC X(12).
+           02  NUMONEL    COMP  PIC  S9(4).
+           02  NUMONEF    PICTURE X.
+           02  FILLER REDEFINES NUMONEF.
+             03 NUMONEA    PICTURE X.
+           02  FILLER   PICTURE X(1).
+           02  NUMONEI  PIC 9(5).
+           02  NUMTWOL    COMP  PIC  S9(4).
+           02  NUMTWOF    PICTURE X.
+           02  FILLER REDEFINES NUMTWOF.
+             03 NUMTWOA    PICTURE X.
+           02  FILLER   PICTURE X(1).
+           02  NUMTWOI  PIC 9(5).
+           02  ADDRESL    COMP  PIC  S9(4).
+           02  ADDRESF    PICTURE X.
+           02  FILLER REDEFINES ADDRESF.
+             03 ADDRESA    PICTURE X.
+           02  FILLER   PICTURE X(1).
+           02  ADDRESI  PIC 9(6).
+           02  SUBRESL    COMP  PIC  S9(4).
+           02  SUBRESF    PICTURE X.
+           02  FILLER REDEFINES SUBRESF.
+             03 SUBRESA    PICTURE X.
+           02  FILLER   PICTURE X(1).
+           02  SUBRESI  PIC 9(6).
+           02  MULRESL    COMP  PIC  S9(4).
+           02  MULRESF    PICTURE X.
+           02  FILLER REDEFINES MULRESF.
+             03 MULRESA    PICTURE X.
+           02  FILLER   PICTURE X(1).
+           02  MULRESI  PIC 9(10).
+           02  DIVRESL    COMP  PIC  S9(4).
+           02  DIVRESF    PICTURE X.
+           02  FILLER REDEFINES DIVRESF.
+             03 DIVRESA    PICTURE X.
+           02  FILLER   PICTURE X(1).
+           02  DIVRESI  PIC 9(5).
+           02  MSGIL    COMP  PIC  S9(4).
+           02  MSGIF    PICTURE X.
+           02  FILLER REDEFINES MSGIF.
+             03 MSGIA    PICTURE X.
+           02  FILLER   PICTURE X(1).
+           02  MSGII  PIC X(30).
+           02  LEV1L    COMP  PIC  S9(4).
+           02  LEV1F    PICTURE X.
+           02  FILLER REDEFINES LEV1F.
+             03 LEV1A    PICTURE X.
+           02  FILLER   PICTURE X(1).
+           02  LEV1I  PIC X(8).
+       01  MAPCALO REDEFINES MAPCALI.
+           02  FILLER PIC X(12).
+           02  FILLER PICTURE X(3).
+           02  NUMONEC    PICTURE X.
+           02  NUMONEO  PIC 9(5).
+           02  FILLER PICTURE X(3).
+           02  NUMTWOC    PICTURE X.
+           02  NUMTWOO  PIC 9(5).
+           02  FILLER PICTURE X(3).
+           02  ADDRESC    PICTURE X.
+           02  ADDRESO  PIC 9(6).
+           02  FILLER PICTURE X(3).
+           02  SUBRESC    PICTURE X.
+           02  SUBRESO  PIC 9(6).
+           02  FILLER PICTURE X(3).
+           02  MULRESC    PICTURE X.
+           02  MULRESO  PIC 9(10).
+           02  FILLER PICTURE X(3).
+           02  DIVRESC    PICTURE X.
+           02  DIVRESO  PIC 9(5).
+           02  FILLER PICTURE X(3).
+           02  MSGIC    PICTURE X.
+           02  MSGIO  PIC X(30).
+           02  FILLER PICTURE X(3).
+           02  LEV1C    PICTURE X.
+           02  LEV1O  PIC X(8).
+
