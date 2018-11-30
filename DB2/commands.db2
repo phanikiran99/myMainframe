@@ -18,3 +18,12 @@ generally used to know if the DB is in rw mode or any other
 
 # To start a database , use optional parameters to start in a specific mode
 
+
+-DIS UTIL(<UTIL-ID>)
+-TERM UTIL(<UTIL-ID>)
+
+# Used to ge the Utility id and to terminates
+# extremely useful when we have a Load Utility Job failure abnormally
+
+
+
